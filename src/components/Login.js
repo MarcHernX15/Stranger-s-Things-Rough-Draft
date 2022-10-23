@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
     async function loginSubmit (event) {
         event.preventDefault();
@@ -29,6 +30,8 @@ const LoginForm = () => {
             console.log("This is our translated data: ", data)
 
                 localStorage.setItem("token", data.data.token)
+            
+            navigate("/profile")
 
         } catch (error) {
             console.log(error);
@@ -43,6 +46,12 @@ const LoginForm = () => {
         console.log("This is the value of the event target: ", event.target.value)
         setPassword(event.target.value)
     }
+
+    function logOut(event) {
+        localStorage.removeItem("token")
+    }
+    
+    
 
     return (
         <div id="loginPage">
@@ -60,6 +69,7 @@ const LoginForm = () => {
 
                 <button id="button" type="submit">Log In</button>
             </form>
+            <button onClick={logOut}>Log Out</button>
             <div>
         <p> Don't have a login?</p>
         <Link to="/register">Register here!</Link>

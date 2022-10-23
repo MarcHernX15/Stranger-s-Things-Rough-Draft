@@ -63,12 +63,16 @@ const profilePage = () => {
                 setYourPosts(yourPosts.filter((post) => {
                     return post._id != id
                 }))
-                navigate("/profile")
+                
 
             } catch (error) {
                 console.log(error)
-        }
+        }   navigate("/profile")
     }
+    function logOut(event) {
+        localStorage.removeItem("token")
+    }
+    
 
     // async function createEdit (event) {
     //     event.preventDefault();
@@ -136,6 +140,8 @@ console.log(filteredArr)
 
         </div>
         <Link to="/newPosts">Create New Post</Link> 
+        <br />
+        <button onClick={logOut}>Log Out</button>
         </div>
         )
 }
