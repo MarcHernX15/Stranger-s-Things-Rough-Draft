@@ -57,16 +57,16 @@ const EditPost = () => {
     }
 
     return (
-        <div>
-            <p>Edit Post</p>
+        <div id="editPage">
+            <p id="title">Edit Page</p>
             <form onSubmit={createEdit}>
-                <label>Edit Title</label>
+                <label id="username">Edit Title</label>
                 <input type="text" value={title} onChange={editTitle}></input>
                 <br />
-                <label>Edit Description</label>
+                <label id="username">Edit Description</label>
                 <input type="text" value={desc} onChange={editDesc}></input>
                 <br />
-                <label>Edit Price</label>
+                <label id="username">Edit Price</label>
                 <input type="text" value={price} onChange={editPrice}></input>
                 <br />
                 <button type="Submit">Submit New Post</button>

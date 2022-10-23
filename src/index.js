@@ -11,6 +11,7 @@ import Profile from "./components/Profile"
 import NewMessages from "./components/NewMessages";
 import NewPosts from "./components/NewPosts";
 import EditPost from "./components/EditPost";
+import IndexHome from "./components/indexhome";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         element: <Homepage />,
         errorElement: <ErrorPage />,
         children: [
+            {
+                index: true,
+                element: <IndexHome />
+            },
             {
                 path: "/posts",
                 element: <Posts />

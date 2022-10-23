@@ -105,27 +105,27 @@ const profilePage = () => {
 console.log(yourPosts)
 console.log(filteredArr)    
     return (
-        <div>
-            <p>Your Profile </p>
+        <div id="profilePage">
+            <p id="profileTitle">Your Profile </p>
             <div>
             {
             myMessages.length ? myMessages.map((message, idx) => {
                 return <div key={idx}>
-                    <p>{message.content}</p>
+                    <p id="font">{message.content}</p>
                 </div>;
             }) : <p>No Messages Today!</p>
             }
             {
             filteredArr.length ? filteredArr.map((post, idx) => {
                 return <div key={idx}>
-                    <p>{post.title}</p>
+                    <p id="postTitle">{post.title}</p>
                     <button onClick={(event) => {
                         event.preventDefault();
                         deletePost(post._id);
                     }}>Remove Post</button>
                     <Link to={`/editPosts/${post._id}`}>Edit Post</Link>
                 </div>;
-            }) : <p>You have not posted anything!</p>
+            }) : <p id="font">You have not posted anything!</p>
             }
             {/* {
                 <div>

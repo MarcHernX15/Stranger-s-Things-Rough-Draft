@@ -25,7 +25,7 @@ const DetailedPostView = () => {
     // console.log("this is the specific: ", theSpecificPost)
 
     return (
-        <div>
+        <div id="detailedPost">
             
             {
                 moreDetails.title ?

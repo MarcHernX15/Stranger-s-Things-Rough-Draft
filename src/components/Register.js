@@ -46,13 +46,13 @@ const RegisterForm = () => {
     return (
         <div>
 
-            <form onSubmit={formSubmitHandler}>
-                <label>Enter New Username Here</label>
+            <form id="loginPage" onSubmit={formSubmitHandler}>
+                <label id="username">Enter New Username Here</label>
                 <input type="text" value={username} onChange={updateUsernameState}></input>
                 
                 <br/>
 
-                <label>Enter New Password Here</label>
+                <label id="password">Enter New Password Here</label>
                 <input type="text" value={password} onChange={updatePasswordState}></input>
 
                 <br/>
